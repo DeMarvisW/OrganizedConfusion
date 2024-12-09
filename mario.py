@@ -15,3 +15,8 @@ def get_height():
             print("Not an integer")
 #Call the function that has been defined so that when the code is excuted the parameters are enabled.
 main()
+
+#Named Argument observed below.
+for i in range(4):
+    print("?", end="")
+print()
