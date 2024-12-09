@@ -33,4 +33,4 @@ s = s.lower()
 if s in ["y", "yes"]:
     print("You're Persistant.")
 elif s in ["n", "no"]:
-    print("You really don't disagree?")
+    print("You really don't agree?")
