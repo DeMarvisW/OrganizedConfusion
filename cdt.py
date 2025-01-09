@@ -1,5 +1,7 @@
 import time
-# % = Modulist: Returns the remainder of division. "02 is a format specifier. Displays 2 digits/ zero padded w 0"
+# % = Modulist: Returns the remainder of division. 
+# "02 is a format specifier. Displays 2 digits/ zero padded i.e fills the empty spaces with 0"
+
 my_time = int(input("Enter the time in seconds: "))
 
 for x in range(my_time, 0, -1):
