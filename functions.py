@@ -38,10 +38,34 @@
 
 #                                    RETURN
 
-# Return Statement = A statement used to enda a fundciton and send a result back to a caller.
+# Return Statement = A statement used to enda a function and send a result back to a caller.
 
-def add(x, y):
-    z = z + y
-   return z
+#def add(x, y):
+#    z = x + y
+#    return z
 
-def subtract()
+#def subtract(x, y):
+#    z = x - y
+#    return z
+
+#def multiply(x, y):
+#    z = x * y
+#    return z
+
+#def divide(x, y):
+#    z = x / y
+#    return z
+
+#print(add(1, 2))
+#print(subtract(1, 2))
+#print(multiply(1, 2))
+#print(divide(1, 2))
+
+def create_name(first, last):      # Function to create a full name. #2 these are our paramenters.
+    first = first.capitalize()         # Capitalize #3 We took those values and made them uppercase.
+    last =  last.capitalize()
+    return first + " " + last           # We would like to return a first and last name with a space between when invoked.
+                                            #4 We concatinated the strings together.
+full_name = create_name("Martian", "Williams")      #1 Create a variable named full_name. We sent our function some arguments.
+
+print(full_name)   #5 Using the "return" statement you can recall some data back to the plase in which you call a function.
