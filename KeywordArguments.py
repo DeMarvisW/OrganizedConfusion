@@ -1,3 +1,4 @@
+# JAN 12, 2025
 # Keyword Arguments = An argument proceeded by an Identifier.
 #                     Helps with readability.
 #                     Order of arguments doesn't matter
@@ -8,7 +9,7 @@
 
 # hello("Hello", "Mr", "Martian", "The Marvelous")    # When invoking this function it prints the arguments you input.
 
-# Keyword arguemnts = hello("Hello", title="Mr", first="Martian", last="The Marvelous")
+# Keyword arguemnts = hello("Hello", title="Mr", first="Martian", last="Among Men")
 # Via inserting keyword arguments you can arrange theese in any order and they still are displayed correctly when called.
 # Because we DIDN'T use a keyword on "Hello" it is a POSITIONAL argument.
 # Positional arguments MUST come before keyword arguemnts when paired to avoid an error.
