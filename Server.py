@@ -1,11 +1,11 @@
-'''  #Server.py for Emotion_detecton.py to call a Flask wep API
+'''
 Executing this function initiates the application of emotion
 analysis to be executed over the Flask channel and deployed on
 localhost:5000.
 '''
 
 from flask import Flask, render_template, request  # Import Flask modules
-from emotion_detection.emotion_detector import emotion_detector  # Import function
+from emotion_detection import emotion_detector  # Import function
 
 # Initiate the Flask app
 app = Flask(__name__)
@@ -44,4 +44,3 @@ if __name__ == "__main__":
     This function executes the flask app and deploys it on localhost:5000
     '''
     app.run(debug=True)
-
