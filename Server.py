@@ -12,35 +12,41 @@ app = Flask(__name__)
 
 @app.route("/emotionDetector")
 def emotion_detector_api():
+    ''' 
+    This function receives the text from the HTML interface and 
+    runs emotion detection using the emotion_detector() function.
     '''
-    This code receives the text from the HTML interface and 
-    runs emotion detection over it using emotion_detector()
-    function. The output returned shows the label and its confidence 
-    score for the provided text.
-    '''
-    text_to_analyze = request.args.get("textToAnalyze", "")
+    text_to_analyze = request.args.get("textToAnalyze", "").strip()
 
+    # ✅ If the input is blank, immediately return an error message
     if not text_to_analyze:
-        return "Error: No text provided. Please enter a text input."
+        return "Invalid text! Please try again!", 400
 
     # Call the emotion detector function
     result = emotion_detector(text_to_analyze)
 
-    # Format the response as required
-    formatted_response = f"For the given statement, the system response is 'anger': {result['anger']}, 'disgust': {result['disgust']}, 'fear': {result['fear']}, 'joy': {result['joy']} and 'sadness': {result['sadness']}. The dominant emotion is {result['dominant_emotion']}."
+    # ✅ If status_code = 500 (Server error), return an error message
+    if result["status_code"] == 500:
+        return "Error: Could not process request. Please try again later.", 500
+
+    # ✅ If dominant_emotion is None, return an invalid text error
+    if result["dominant_emotion"] is None:
+        return "Invalid text! Please try again!", 400
+
+    # ✅ If successful, format the response
+    formatted_response = (
+        f"For the given statement, the system response is 'anger': {result['anger']}, "
+        f"'disgust': {result['disgust']}, 'fear': {result['fear']}, "
+        f"'joy': {result['joy']} and 'sadness': {result['sadness']}. "
+        f"The dominant emotion is {result['dominant_emotion']}."
+    )
 
     return formatted_response
 
 @app.route("/")
 def render_index_page():
-    '''
-    This function initiates the rendering of the main application
-    page over the Flask channel.
-    '''
+    ''' This function renders the main application page '''
     return render_template("index.html")
 
 if __name__ == "__main__":
-    '''
-    This function executes the flask app and deploys it on localhost:5000
-    '''
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
