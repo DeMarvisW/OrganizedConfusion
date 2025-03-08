@@ -1,4 +1,6 @@
-'''
+''' 
+Ensure that the Request Module is installed: python3 -m pip install requests
+Ensure that the Flask Module is installed: python3 -m pip install flask
 Executing this function initiates the application of emotion
 analysis to be executed over the Flask channel and deployed on
 localhost:5000.
