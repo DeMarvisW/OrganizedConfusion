@@ -1,3 +1,4 @@
+import math
 x = 10
 y = 5
 
@@ -94,4 +95,33 @@ print(a and b) # Returns False bc BOTH are NOT "True"
 print(a or b)  # Returns True bc ONE is accurate
 print(not a)   # Returns False bc you are printing what A is NOT
 print(not b)   # Returns True bc you are printing what B is NOT
+print("=================================")
+# String Slicing
+text = "Python Programming"
+print(text[0:6])   # Print all of the data obsrved in "text" from 0-5
+print(text[7:])
+print(text[::-1])  # Print all of the data in text BUT in REVERSE
+print("=================================")
+# String Formatting with .format()
+name = "Alice"
+age = 25
+msg = "My name is {} and I am {} years old".format(name,age)
+print(msg)
+print("=================================")
 
+# Using Placeholders
+msg2 = "My name is {0} and I am {1} years. {0} is a nice name".format(name,age)
+print(msg2)
+print("=================================")
+
+# Math Module Operations
+
+print(math.pi)
+print(math.sqrt(16))
+print(math.floor(4.7))   # Round Down to 4
+print(math.ceil(5.3))    # Round Up to 6
+print(math.pow(2,3))     # 2 to the power of 3
+
+pi = 3.141592653589793   # Define pi as a float observed as the provided
+print(round(pi,2))       # instruct the system to print pi to the 2nd decimal placement when printing pi
+print("=================================")
